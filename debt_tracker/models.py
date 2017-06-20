@@ -24,7 +24,7 @@ class Debt(models.Model):
     amount = models.FloatField()
     date_added =  models.DateTimeField(default=timezone.now)
     owed_to = models.CharField(max_length=100)
-    stauts = models.CharField(max_length=15, default='Not Paid')
+    status = models.CharField(max_length=15, default='Not Paid')
 
     def pay(self, payment):
         self.amount = self.amount - payment
