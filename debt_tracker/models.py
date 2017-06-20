@@ -8,8 +8,8 @@ from django.utils import timezone
 class Debtor(models.Model):
     debtor = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
-    add_date = models.DateTimeField(default=timezone.now)
     uniqueid = models.IntegerField()
+    add_date = models.DateTimeField(default=timezone.now)
 
     def view_total(self):
         pass
@@ -24,6 +24,7 @@ class Debt(models.Model):
     amount = models.FloatField()
     date_added =  models.DateTimeField(default=timezone.now)
     owed_to = models.CharField(max_length=100)
+    stauts = models.CharField(max_length=15, default='Not Paid')
 
     def pay(self, payment):
         self.amount = self.amount - payment
