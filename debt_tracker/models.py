@@ -11,9 +11,6 @@ class Debtor(models.Model):
     uniqueid = models.IntegerField()
     add_date = models.DateTimeField(default=timezone.now)
 
-    def view_total(self):
-        pass
-
 
     def __str__(self):
         return self.debtor
@@ -28,5 +25,8 @@ class Debt(models.Model):
 
     def pay(self, payment):
         self.amount = self.amount - payment
+
+    def __str__(self):
+        return "owes ${0} to {1}".format(amount, owed_to)
 
 # Create your models here.
