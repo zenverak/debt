@@ -1,2 +1,9 @@
-
-
+{% block content %}
+    {% for debtor in debtors %}
+        <div class="post">
+            <div class="date">
+                {{ debtor.debtor }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
