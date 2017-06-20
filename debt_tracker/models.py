@@ -27,6 +27,6 @@ class Debt(models.Model):
         self.amount = self.amount - payment
 
     def __str__(self):
-        return "owes ${0} to {1}".format(amount, owed_to)
+        return "owes ${0} to {1}".format(self.amount, self.owed_to)
 
 # Create your models here.
