@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class Debtor(models.Model):
-    debtor = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
     uniqueid = models.IntegerField()
     add_date = models.DateTimeField(default=timezone.now)
