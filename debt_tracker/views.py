@@ -10,6 +10,11 @@ def debtor_list(request):
 
 
 def debt_list(request, id):
+    '''
+    Will return a dictionary containing 
+    debtor and his debts
+    '''
     debtor = Debtor.objects.get(uniqueid=id)
     debts = Debt.objects.filter(debtor=debtor)
-    return render(request, 'debt_tracker/debt_list.html',{'debts':debts})
+    info={"debtor":debtor,"debts":debts}
+    return render(request, 'debt_tracker/debt_list.html',{'info':info})

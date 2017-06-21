@@ -3,7 +3,7 @@
 {% block content %}
     {% for debtor in debtors %}
         <div class="post">
-            <div class="date"><a href="{% url 'debt_list' id=debtor.uniqueid %}" >
+            <div class="date"><a href="{% url 'debt_lists' id=debtor.uniqueid %}" >
                 {{ debtor.name }}
 				</a>
             </div>
