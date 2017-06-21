@@ -1,12 +1,22 @@
 {% extends 'debt_tracker/base.html' %}
 
 {% block content %}
-    {% for debtor in debtors %}
-        <div class="post">
-            <div class="date"><a href="{% url 'debt_lists' id=debtor.uniqueid %}" >
-                {{ debtor.name }}
-				</a>
-            </div>
-        </div>
-    {% endfor %}
+<div class="page-header">
+   <h1><a href="/">List of Debtors</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for debtor in debtors %}
+                <div class="post">
+					<div class="date">
+						<a href="{% url 'debt_list' id=debtor.uniqueid %}" >
+							{{ debtor.name }}
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
 {% endblock %}
