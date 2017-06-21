@@ -1,10 +1,10 @@
 {% extends 'debt_tracker/base.html' %}
 
 {% block content %}
-    {% for debtor in debtors %}
+    {% for debt in debts %}
         <div class="post">
             <div class="date">
-                {{ debtor.name }}
+                {{ debts }}
             </div>
         </div>
     {% endfor %}
