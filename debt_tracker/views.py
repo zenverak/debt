@@ -9,6 +9,7 @@ def debtor_list(request):
     return render(request, 'debt_tracker/debtor_list.html', {'debtors':debtors})
 
 
-def debt_list(request, debtor):
-    debts = Debt.object.filter(debt__debtor=debtor)
-    return render(request, 'debt_tracker/debts_list.html',{'debts':debts})
+def debt_list(request, id):
+    debtor = Debtor.objects.get(uniqueid=id)
+    debts = Debt.objects.filter(debtor=debtor)
+    return render(request, 'debt_tracker/debt_list.html',{'debts':debts})

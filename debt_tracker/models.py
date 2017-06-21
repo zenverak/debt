@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from django.shortcuts import redirect
 
 
 class Debtor(models.Model):
@@ -13,7 +14,7 @@ class Debtor(models.Model):
 
 
     def __str__(self):
-        return self.debtor
+        return self.name
 
 
 class Debt(models.Model):

@@ -1,0 +1,11 @@
+{% extends 'debt_tracker/base.html' %}
+
+{% block content %}
+    {% for debt in debts %}
+        <div class="post">
+            <div class="date">
+                {{ debt }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -3,8 +3,9 @@
 {% block content %}
     {% for debtor in debtors %}
         <div class="post">
-            <div class="date">
+            <div class="date"><a href="{% url 'debt_list' id=debtor.uniqueid %}" >
                 {{ debtor.name }}
+				</a>
             </div>
         </div>
     {% endfor %}
