@@ -16,3 +16,13 @@ class DebtForm(forms.ModelForm):
     class Meta:
         model = Debt
         fields = ('amount', 'owed_to',)
+
+        
+class DebtPay(forms.ModelForm):
+
+    payment_amount = forms.FloatField()
+
+
+    class Meta:
+        model = Debt
+        fields = ('amount', )
