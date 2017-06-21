@@ -2,18 +2,26 @@
 
 {% block content %}
 <div class="page-header">
-	<h1><a href="/">Debts for {{ info.debtor.name }}</a></h1>
+	<h2><a href="/">Debt List</a></h2>
 </div>
 <div class="content container">
 	<div class="row">
 		<div class="col-md-8">
-			{% for debt in info.debts %}
-				<div class="post">
-					<div class="date">
-						{{ debt }}
+			<table style="width:100%">
+				<tr>
+					<th class='column'> Amount Owed </th>
+					<th class='column'> Company Owed To </th>
+				</tr>
+				<caption> Debts for {{ info.debtor.name }} </caption>
+				{% for debt in info.debts %}
+					<div class="post">
+						<tr>
+							<th> {{ debt.amount }} </th>
+							<th> {{ debt.owed_to }} </th>
+						</tr>
 					</div>
-				</div>
-			{% endfor %}
+				{% endfor %}
+			</table>
          </div>
     </div>
 </div>
