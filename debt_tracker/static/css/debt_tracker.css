@@ -29,6 +29,7 @@ th, td {
 
 .content {
     margin-left: 40px;
+
 }
 
 h1, h2, h3, h4 {
@@ -54,6 +55,7 @@ h1, h2, h3, h4 {
     margin-right: 20px;
 }
 
+
 .post {
     margin-bottom: 70px;
 }
@@ -62,3 +64,46 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+
+.paid {
+	color: Red;
+}
+
+.add_div{
+    background-color: Pink;
+     top:0;
+    right:0;
+    width:100px;
+    height: 75px;  
+    position:absolute;
+
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.add{
+    text-align: center;
+    color: Black;
+    position:relative;
+    padding: 70px 0;
+
+}
+.table{
+    position:absolute;
+    left:0;
+    top:0;
+    width:50%;
+    
+}
+.big_parent{
+    position:relative;
+    width:700px;
+    height:200px;
+    
+    
+    
+}
+
+.body_design{
+        background-color: #ADD8E6;
+}
