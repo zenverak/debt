@@ -9,7 +9,11 @@
 		<div class="col-md-8">
 			<form method="POST" class="post-form">{% csrf_token %}
 				{{ info.form }}
-				<button type="submit" class="save btn btn-default">Pay</button>
+				{% if info.debt.status == 'Not Paid' %}
+					<button type="submit" class="save btn btn-default">Pay</button>
+				{% else %}
+					<h2 class='paid'><a href="{% url 'debt_list' id=info.debt.debtor.uniqueid %}">You paid your debt. Click here to go back to your debts.</a></h2>
+				{% endif %}
 			</form>
 		</div>
 	</div>
