@@ -26,6 +26,8 @@ class Debt(models.Model):
 
     def pay(self, payment):
         self.amount = self.amount - payment
+        if self.amount == 0:
+            status = 'paid'
 
     def __str__(self):
         return "owes ${0} to {1}".format(self.amount, self.owed_to)
