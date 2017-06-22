@@ -1,0 +1,23 @@
+{% extends 'debt_tracker/base.html' %}
+
+{% block content %}
+<div class="page-header">
+   <h1>Debt Tracker</h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+                <div class="post">
+					<div class="date">
+						<div>
+                            <a href="{% url 'debtor_list' %}" >Go to the lists of debtors</a>
+                        </div>
+                        <div>
+                            <a href="{% url 'company_list' %}" >Go to the lists of companies</a>
+                         </div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

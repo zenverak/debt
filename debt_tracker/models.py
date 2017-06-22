@@ -34,4 +34,13 @@ class Debt(models.Model):
     def __str__(self):
         return "owes ${0} to {1}".format(self.amount, self.owed_to)
 
+
+class Company(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    business_type = models.CharField(max_length=30)
+
+
+    def __str__(self):
+        return "{0} Specializes in {1}".format(self.name, self.business_type)
 # Create your models here.

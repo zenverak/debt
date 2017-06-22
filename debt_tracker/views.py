@@ -2,9 +2,17 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
-from .models import Debtor, Debt
+from .models import Debtor, Debt, Company
 from .forms import DebtPay,DebtForm, DebtorForm
 
+
+def main(request):
+    return render(request, 'debt_tracker/main.html', {})
+
+
+def company_list(request):
+    companies = Company.objects.all()
+    return render(request, 'debt_tracker/company_list.html', {'companies':companies})
 def debtor_list(request):
     debtors = Debtor.objects.all()
     return render(request, 'debt_tracker/debtor_list.html', {'debtors':debtors})
