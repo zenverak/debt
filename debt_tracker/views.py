@@ -30,6 +30,7 @@ def debt_pay(request,pk):
     debt = Debt.objects.get(pk=pk)
     if request.method == "POST":
         debt.pay(float(request.POST['payment_amount']))
+        debt.save()
         print debt.amount
         form = DebtPay(initial={'amount':debt.amount})
         form.fields['amount'].disabled = True
