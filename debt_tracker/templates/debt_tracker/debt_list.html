@@ -6,15 +6,13 @@
 </div>
 <div class="content container">
 	<div class="row">
-		<div class="col-md-8">
-			<table style="width:100%">
+		<div class="big_parent">
+			<table  class='table'>
 				<tr>
 					<th class='column'> Amount Owed </th>
 					<th class='column'> Company Owed To </th>
 				</tr>
-				<caption> Debts for {{ info.debtor.name }} 
-                    <a  href="{% url 'debt_add' id=info.debtor.uniqueid %}" class="top-menu add"><span class="glyphicon glyphicon-plus"></span></a>
-                </caption>
+				<caption> Debts for {{ info.debtor.name }} </caption>
 				{% for debt in info.debts %}
 
 					<div class="post">
@@ -26,6 +24,9 @@
 
 				{% endfor %}
 			</table>
+            <div class="add_div">
+                 <a  href="{% url 'debt_add' id=info.debtor.uniqueid %}" class="add">Add new debts for {{ info.debtor.name }}</a>
+            </div>
          </div>
     </div>
 </div>
