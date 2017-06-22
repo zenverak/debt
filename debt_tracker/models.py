@@ -43,4 +43,5 @@ class Company(models.Model):
 
     def __str__(self):
         return "{0} Specializes in {1}".format(self.name, self.business_type)
+
 # Create your models here.
